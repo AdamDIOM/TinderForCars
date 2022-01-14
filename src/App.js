@@ -1,10 +1,13 @@
-import Header from "./components/header";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
     <div className="App">
-      <h1>Tinder for Cars</h1>
       <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }

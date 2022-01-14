@@ -1,0 +1,19 @@
+.footer{
+    background-color: slategray;
+    color:antiquewhite;
+    height:10vh;
+    padding:0px 15px 0px 15px;
+    text-align: center;
+}
+
+Col{
+    margin: 15px 0px 15px 0px;
+}
+
+.highlightCol{
+    background-color:grey;
+}
+
+a{
+    color:antiquewhite;
+}
