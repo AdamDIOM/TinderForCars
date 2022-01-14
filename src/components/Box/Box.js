@@ -5,7 +5,7 @@ export default function Box(){
     return(
         <Container className="box">
             {/* photo */}
-            <img className="carImage" alt="image of a car"/>
+            <img className="carImage" alt="car to look at - type coming soon"/>
             {/* make/type | owner */}
             <Row>
                 <Col md={0} sm={2} className="d-md-none"></Col>
