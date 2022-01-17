@@ -71,7 +71,9 @@ export default function Box(){
         return(
             <Container className="box">
                 {/* photo */}
-                <img className="carImage" alt={`car to look at - ${currentData.car.make} ${currentData.car.model}`} src={`./graphics/cars/${currentData.car.image}`}  />
+                <div className="carImageDiv">
+                    <img className="carImage" alt={`car to look at - ${currentData.car.make} ${currentData.car.model}`} src={`./graphics/cars/${currentData.car.image}`}  />
+                </div>
                 {/* make/type | owner */}
                 <Row>
                     <Col md={0} sm={2} className="d-md-none"></Col>
