@@ -48,9 +48,10 @@ export default function Box(){
         // use twilio to send a text somehow?
         
         var phoneNum = window.prompt("enter your phone num (entire +447624xxxxxx or equivalent)");
+        var name = window.prompt("enter your name");
     
         //const phoneNum = "+447624420298";
-        const text=`Hey ${currentData.owner.forename}, carshare found! Send a message to ` + phoneNum;
+        const text=`Hey ${currentData.owner.forename}, carshare found! Send a message to ${name} at ${phoneNum}.`;
         // change phoneNum to the car owner - currently set to env secret number
         /*const response = */await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
