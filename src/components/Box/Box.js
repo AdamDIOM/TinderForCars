@@ -43,9 +43,11 @@ export default function Box(){
     }
     
     useEffect(() => {
+        
         importData();
+        
         //console.log(process.env.REACT_APP_DEFAULT_PHONE_NUMBER);
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     // use twilio function as api to send text
     async function contactOwner(){
