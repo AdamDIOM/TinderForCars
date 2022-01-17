@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./Box.css";
 
@@ -15,7 +15,9 @@ const missingData = {
     "owner" : {
         "forename" : "undefined",
         "surname" : "undefined",
-        "number" : "undefined"
+        "number" : "undefined",
+        "location" : "undefined",
+        "days" : ["undefined"]
     }
 }
 
@@ -30,10 +32,12 @@ var current = 0;
 
 export default function Box(){
     async function importData(){
-        /* const fetchedData = */ await fetch("./data.json")
+        // ../TinderForCarsPrivate/p.d.j
+        /* const fetchedData = */ await fetch("./TinderForCarsPrivate/private.data.json")
         .then(res => res.json())
         .then(data => dataArray = data);
         if(dataArray.length > 0 ) setCurrentData(dataArray[0]);
+        console.log(currentData.owner.days);
         setLoaded(true);
         console.log("fetching");
     }
@@ -82,7 +86,11 @@ export default function Box(){
                     <Col md={0} sm={2} className="d-md-none"></Col>
                     <Col md={4} sm={10}>{currentData.owner.forename} {currentData.owner.surname}</Col>
                     <Col md={0} sm={2} className="d-md-none"></Col>
-                    <Col md={4} sm={10}>{currentData.owner.location}</Col>
+                    <Col md={8} sm={10}>{currentData.owner.days.map(element => (
+                        <React.Fragment key={element}>{element.toString()} </React.Fragment>
+                    ))}</Col>
+                    <Col md={0} sm={2} className="d-md-none"></Col>
+                    <Col md={4} sm={10}>From {currentData.owner.location}</Col>
                 </Row>
                 {/* yes/no */}
                 <Row>

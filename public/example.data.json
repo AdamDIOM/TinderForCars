@@ -9,7 +9,8 @@
             "forename" : "forename",
             "surname" : "surname",
             "number" : "phone number",
-            "location" : "location"
+            "location" : "location",
+            "days" : ["day", "day"]
         }
     }
 ]

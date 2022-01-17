@@ -9,7 +9,8 @@
             "forename" : "1 redacted",
             "surname" : "1",
             "number" : "redacted",
-            "location" : "redacted"
+            "location" : "redacted",
+            "days" : ["Monday", "Tuesday", "Wednesday", "Thursday"]
         }
     },
     {
@@ -22,7 +23,8 @@
             "forename" : "2 redacted",
             "surname" : "2",
             "number" : "redacted",
-            "location" : "redacted"
+            "location" : "redacted",
+            "days" : ["Monday", "Wednesday", "Friday"]
         }
     },
     {
@@ -35,7 +37,8 @@
             "forename" : "3 redacted",
             "surname" : "3",
             "number" : "redacted",
-            "location" : "redacted"
+            "location" : "redacted",
+            "days" : ["Tuesday", "Wednesday", "Thursday"]
         }
     }
 ]

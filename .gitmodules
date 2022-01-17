@@ -1,0 +1,3 @@
+[submodule "public/TinderForCarsPrivate"]
+	path = public/TinderForCarsPrivate
+	url = https://github.com/AdamDIOM/TinderForCarsPrivate
