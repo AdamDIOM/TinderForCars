@@ -22,9 +22,9 @@ const missingData = {
 
 var current = 0;
 
-function getCurrent(){
-    console.log(current);
-}
+// function getCurrent(){
+//     console.log(current);
+// }
 
 
 
@@ -40,6 +40,7 @@ export default function Box(){
     
     useEffect(() => {
         importData();
+        //console.log(process.env.REACT_APP_DEFAULT_PHONE_NUMBER);
     }, [])
 
     // use twilio function as api to send text
@@ -50,8 +51,8 @@ export default function Box(){
     
         //const phoneNum = "+447624420298";
         const text=`Hey ${currentData.owner.forename}, carshare found! Send a message to ` + phoneNum;
-        // change phoneNum to the car owner
-        /*const response = */await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${currentData.owner.number}`, {
+        // change phoneNum to the car owner - currently set to env secret number
+        /*const response = */await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -70,7 +71,7 @@ export default function Box(){
         return(
             <Container className="box">
                 {/* photo */}
-                <img className="carImage" alt="car to look at - type coming soon" src={`./graphics/cars/${currentData.car.image}`}  />
+                <img className="carImage" alt={`car to look at - ${currentData.car.make} ${currentData.car.model}`} src={`./graphics/cars/${currentData.car.image}`}  />
                 {/* make/type | owner */}
                 <Row>
                     <Col md={0} sm={2} className="d-md-none"></Col>
@@ -91,9 +92,9 @@ export default function Box(){
                         }}>NO</Button>
                         {/* on click run "nextCar" */}
                     </Col>
-                    <Col md={1} sm={2}><Button onClick={() => {
+                    <Col md={1} sm={2}>{/*<Button onClick={() => {
                         getCurrent()
-                    }}>test get current</Button></Col>
+                    }}>test get current</Button>*/}</Col>
                     <Col md={1} sm={2}></Col>
                     <Col md={4} sm={8}>
                         <Button className="yesnoButton" variant="success" onClick={() => {
