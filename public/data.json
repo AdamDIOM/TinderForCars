@@ -3,13 +3,11 @@
         "car" : {
             "make" : "Nissan",
             "model" : "Note",
+            "plate" : "man111n",
             "image" : "man111n.jpeg"
         },
         "owner" : {
-            "forename" : "1 redacted",
-            "surname" : "1",
-            "number" : "redacted",
-            "location" : "redacted",
+            "location" : "Douglas",
             "days" : ["Monday", "Tuesday", "Wednesday", "Thursday"]
         }
     },
@@ -17,13 +15,11 @@
         "car" : {
             "make" : "Vauxhall",
             "model" : "Viva",
+            "plate" : "lmn123v",
             "image" : "lmn123v.jpeg"
         },
         "owner" : {
-            "forename" : "2 redacted",
-            "surname" : "2",
-            "number" : "redacted",
-            "location" : "redacted",
+            "location" : "Douglas",
             "days" : ["Monday", "Wednesday", "Friday"]
         }
     },
@@ -31,13 +27,11 @@
         "car" : {
             "make" : "Renault",
             "model" : "Clio",
+            "plate" : "dmn001a",
             "image" : "dmn001a.jpeg"
         },
         "owner" : { 
-            "forename" : "3 redacted",
-            "surname" : "3",
-            "number" : "redacted",
-            "location" : "redacted",
+            "location" : "Santon",
             "days" : ["Tuesday", "Wednesday", "Thursday"]
         }
     }

@@ -33,7 +33,7 @@ var current = 0;
 export default function Box(){
     async function importData(){
         // ../TinderForCarsPrivate/p.d.j
-        /* const fetchedData = */ await fetch("./TinderForCarsPrivate/private.data.json")
+        /* const fetchedData = */ await fetch("./data.json")
         .then(res => res.json())
         .then(data => dataArray = data);
         if(dataArray.length > 0 ) setCurrentData(dataArray[0]);
@@ -57,9 +57,9 @@ export default function Box(){
         var name = window.prompt("enter your name");
     
         //const phoneNum = "+447624420298";
-        const text=`Hey ${currentData.owner.forename}, carshare found! Send a message to ${name} at ${phoneNum}.`;
+        const text=`${name} at ${phoneNum}.`;
         // change phoneNum to the car owner - currently set to env secret number
-        /*const response = */await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`, {
+        /*const response = await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`*/await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&plate=${currentData.car.plate}`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -85,8 +85,6 @@ export default function Box(){
                 <Row>
                     <Col md={0} sm={2} className="d-md-none"></Col>
                     <Col md={8} sm={10}>{currentData.car.make} {currentData.car.model}</Col>
-                    <Col md={0} sm={2} className="d-md-none"></Col>
-                    <Col md={4} sm={10}>{currentData.owner.forename} {currentData.owner.surname}</Col>
                     <Col md={0} sm={2} className="d-md-none"></Col>
                     <Col md={8} sm={10}>{currentData.owner.days.map(element => (
                         <React.Fragment key={element}>{element.toString()} </React.Fragment>
