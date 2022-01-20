@@ -1,0 +1,8 @@
+.forms div{
+    margin-bottom:10px;
+}
+.new-box{
+    border: 2px solid #d2286c;
+    border-radius:15px;
+    min-height:100%;
+}

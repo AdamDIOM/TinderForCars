@@ -6,4 +6,5 @@
     max-width:100%;
     height:calc(100vh - 16vh);
     margin: 0;
+    overflow:scroll;
 }

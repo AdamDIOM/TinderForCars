@@ -127,7 +127,7 @@ export default function Box(){
                     console.log(currentData.car.make);
                     setLoaded(true);
                 }}>
-                    output dataArray
+                    Attempt to load
                 </Button>
             </p>
         )
