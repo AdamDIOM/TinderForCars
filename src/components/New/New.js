@@ -1,4 +1,4 @@
-import { Col, Container, Form, FormGroup, Row } from "react-bootstrap";
+import { Button, Container, Form, FormGroup } from "react-bootstrap";
 import "./New.css";
 
 export default function New(){
@@ -34,6 +34,9 @@ export default function New(){
                     <Form.Label>Model</Form.Label>
                     <Form.Control type="model" placeholder="Enter car model" />
                 </FormGroup>
+                <Button variant="success" type="submit">
+                    Submit
+                </Button>
             </Form>
         </Container>
     )

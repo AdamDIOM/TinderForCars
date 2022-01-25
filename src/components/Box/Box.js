@@ -59,7 +59,7 @@ export default function Box(){
         //const phoneNum = "+447624420298";
         const text=`${name} at ${phoneNum}.`;
         // change phoneNum to the car owner - currently set to env secret number
-        /*const response = await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`*/await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&plate=${currentData.car.plate}`, {
+        /*const response = await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`*/await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&plate=${currentData.car.plate}&password=${process.env.REACT_APP_TWILIO_PASSWORD}`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
