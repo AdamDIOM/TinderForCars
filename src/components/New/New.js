@@ -65,7 +65,7 @@ export default function New(){
                     <Form.Label>Location</Form.Label>
                     <Form.Control type="location" placeholder="Enter town/village" required onChange={e => setLocation(e.target.value)}/>
                 </FormGroup><FormGroup>
-                    <Form.Check type="switch" label="Monday" onChange={e => setDays((prevState) => ({
+                    <Form.Check className="form-check" type="switch" label="Monday" onChange={e => setDays((prevState) => ({
                         ...prevState,
                         monday: e.target.checked,
                     }))}/>

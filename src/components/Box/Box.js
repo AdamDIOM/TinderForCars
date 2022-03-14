@@ -83,23 +83,26 @@ export default function Box(){
             <Container className="box">
                 {/* photo */}
                 <div className="carImageDiv">
-                    <img className="carImage" alt={`car to look at - ${currentData.car.make} ${currentData.car.model}`} src={`./graphics/cars/${currentData.car.image}`}  />
+                    {/* <img className="carImage" alt={`car to look at - ${currentData.car.make} ${currentData.car.model}`} src={`./graphics/cars/${currentData.car.image}`}  /> */}
+
+                    <Row>
+                        <Col md={0} sm={2} className="d-md-none"></Col>
+                        <Col md={8} sm={10}>{currentData.car.make} {currentData.car.model}</Col>
+                        <Col md={0} sm={2} className="d-md-none"></Col>
+                        <Col md={8} sm={10}><ul>{currentData.owner.days.map(element => (
+                            <li key={element}>{element.toString()} </li>
+                        ))}</ul></Col>
+                        <Col md={0} sm={2} className="d-md-none"></Col>
+                        <Col md={4} sm={10}>From {currentData.owner.location}</Col>
+                    </Row>
+
                 </div>
                 {/* make/type | owner */}
-                <Row>
-                    <Col md={0} sm={2} className="d-md-none"></Col>
-                    <Col md={8} sm={10}>{currentData.car.make} {currentData.car.model}</Col>
-                    <Col md={0} sm={2} className="d-md-none"></Col>
-                    <Col md={8} sm={10}>{currentData.owner.days.map(element => (
-                        <React.Fragment key={element}>{element.toString()} </React.Fragment>
-                    ))}</Col>
-                    <Col md={0} sm={2} className="d-md-none"></Col>
-                    <Col md={4} sm={10}>From {currentData.owner.location}</Col>
-                </Row>
+                
                 {/* yes/no */}
                 <Row>
-                    <Col md={1} sm={2}></Col>
-                    <Col md={4} sm={8}>
+                    <Col md={1} sm={2} className="d-xs-none"></Col>
+                    <Col md={4} sm={8} xs={5} className="nopadding">
                         <Button className="yesnoButton" variant="danger" onClick={() => {
                             current = (current < dataArray.length - 1 ? current + 1 : 0 );
                             console.log(current);
@@ -107,17 +110,17 @@ export default function Box(){
                         }}>NO</Button>
                         {/* on click run "nextCar" */}
                     </Col>
-                    <Col md={1} sm={2}>{/*<Button onClick={() => {
+                    <Col md={1} sm={2} className="d-xs-none">{/*<Button onClick={() => {
                         getCurrent()
                     }}>test get current</Button>*/}</Col>
-                    <Col md={1} sm={2}></Col>
-                    <Col md={4} sm={8}>
+                    <Col md={1} sm={2} className="d-xs-none"></Col>
+                    <Col md={4} sm={8} xs={5} className="nopadding">
                         <Button className="yesnoButton" variant="success" onClick={() => {
                             contactOwner();
                         }}>YES</Button>
                         {/* on click run "contactOwner" */}
                     </Col>
-                    <Col md={1} sm={2}></Col>
+                    <Col md={1} sm={2} xs={1}></Col>
                 </Row>
             </Container>
         )

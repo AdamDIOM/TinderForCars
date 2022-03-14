@@ -1,5 +1,5 @@
 .box{
-    border: 2px solid #d2286c;
+    border: 2px solid red;
     border-radius:15px;
     height:100%;
     font-size:3vh;
@@ -10,7 +10,7 @@
 }
 
 .carImageDiv{
-    border: 2px solid #d2286c;
+    border: 2px solid black;
     box-shadow: 10px 10px;
     width:90%;
     margin:5% 5% 1% 5%;
@@ -30,4 +30,7 @@
     .carImageDiv{
         height:70%;
     }
+}
+.nopadding{
+    padding:0;
 }
