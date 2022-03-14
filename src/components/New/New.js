@@ -35,7 +35,7 @@ export default function New(){
         alert("API pinged.")
         const text=`name=${name}&number=${number}&location=${location}&plate=${plate}&make=${make}&model=${model}&days=[${daysString}]`;
         // change phoneNum to the car owner - currently set to env secret number
-        await fetch(`https://adam-test-3383.twil.io/t4cnew?${text}&password=${process.env.REACT_APP_TWILIO_PASSWORD}`, {
+        await fetch(`https://adam-test-3383.twil.io/ucmcarpoolnew?${text}&password=${process.env.REACT_APP_TWILIO_PASSWORD}`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
