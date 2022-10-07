@@ -61,7 +61,7 @@ export default function Box(){
         }else{
             //const phoneNum = "+447624420298";
             const text=`${name} at ${phoneNum}.`;
-            /*const response = await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`*/await fetch(`https://adam-test-3383.twil.io/t4c?text=${text}&plate=${currentData.car.plate}&password=${process.env.REACT_APP_TWILIO_PASSWORD}`, {
+            /*const response = await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&number=${process.env.REACT_APP_DEFAULT_PHONE_NUMBER}`*/await fetch(`https://adam-test-3383.twil.io/tinderforcars?text=${text}&plate=${currentData.car.plate}&password=${process.env.REACT_APP_TWILIO_PASSWORD}`, {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 mode: 'no-cors', // no-cors, *cors, same-origin
                 cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -83,26 +83,23 @@ export default function Box(){
             <Container className="box">
                 {/* photo */}
                 <div className="carImageDiv">
-                    {/* <img className="carImage" alt={`car to look at - ${currentData.car.make} ${currentData.car.model}`} src={`./graphics/cars/${currentData.car.image}`}  /> */}
-
-                    <Row>
-                        <Col sm={1}></Col>
-                        <Col md={11} sm={11}>{currentData.car.make} {currentData.car.model}</Col>
-                        <Col sm={1}></Col>
-                        <Col md={11} sm={11}><ul>{currentData.owner.days.map(element => (
-                            <li key={element}>{element.toString()} </li>
-                        ))}</ul></Col>
-                        <Col sm={1}></Col>
-                        <Col md={4} sm={10}>From {currentData.owner.location}</Col>
-                    </Row>
-
+                    <img className="carImage" alt={`car to look at - ${currentData.car.make} ${currentData.car.model}`} src={`./graphics/cars/${currentData.car.image}`}  />
                 </div>
                 {/* make/type | owner */}
-                
+                <Row>
+                    <Col md={0} sm={2} className="d-md-none"></Col>
+                    <Col md={8} sm={10}>{currentData.car.make} {currentData.car.model}</Col>
+                    <Col md={0} sm={2} className="d-md-none"></Col>
+                    <Col md={8} sm={10}>{currentData.owner.days.map(element => (
+                        <React.Fragment key={element}>{element.toString()} </React.Fragment>
+                    ))}</Col>
+                    <Col md={0} sm={2} className="d-md-none"></Col>
+                    <Col md={4} sm={10}>From {currentData.owner.location}</Col>
+                </Row>
                 {/* yes/no */}
                 <Row>
-                    <Col md={1} sm={2} className="d-xs-none"></Col>
-                    <Col md={4} sm={8} xs={12} className="nopadding">
+                    <Col md={1} sm={2}></Col>
+                    <Col md={4} sm={8}>
                         <Button className="yesnoButton" variant="danger" onClick={() => {
                             current = (current < dataArray.length - 1 ? current + 1 : 0 );
                             console.log(current);
@@ -110,17 +107,17 @@ export default function Box(){
                         }}>NO</Button>
                         {/* on click run "nextCar" */}
                     </Col>
-                    <Col md={1} sm={2} className="d-xs-none">{/*<Button onClick={() => {
+                    <Col md={1} sm={2}>{/*<Button onClick={() => {
                         getCurrent()
                     }}>test get current</Button>*/}</Col>
-                    <Col md={1} sm={2} className="d-xs-none"></Col>
-                    <Col md={4} sm={8} xs={12} className="nopadding">
+                    <Col md={1} sm={2}></Col>
+                    <Col md={4} sm={8}>
                         <Button className="yesnoButton" variant="success" onClick={() => {
                             contactOwner();
                         }}>YES</Button>
                         {/* on click run "contactOwner" */}
                     </Col>
-                    <Col md={1} sm={2} xs={1}></Col>
+                    <Col md={1} sm={2}></Col>
                 </Row>
             </Container>
         )
